@@ -1,10 +1,10 @@
-const inputEl = document.querySelector('#validation-input')
+const inputEl = document.querySelector('input[data-length="6"]')
 
 inputEl.addEventListener('blur', (event) => {
-    if (event.currentTarget.value.length < 6) {
-        inputEl.classList.add('invalid')
-    } else {
+    if (event.currentTarget.value.length === +inputEl.dataset.length) {
         inputEl.classList.add('valid')
+    } else {
+        inputEl.classList.add('invalid')
     }
     
 })
